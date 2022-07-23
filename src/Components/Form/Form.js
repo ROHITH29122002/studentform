@@ -9,7 +9,7 @@ function Form({student,handleStudent}) {
         <div className={styles.details_cont_1}>
             <div>
                 <h1>
-                    Name :
+                    Name 
                 </h1>
                 <input
                 type="text"
@@ -21,7 +21,7 @@ function Form({student,handleStudent}) {
             </div>
             <div>
                 <h1>
-                    Email :
+                    Email 
                 </h1>
                 <input
                 type="email"
@@ -33,7 +33,7 @@ function Form({student,handleStudent}) {
             </div>
             <div>
                 <h1>
-                    Website :
+                    Website 
                 </h1>
                 <input
                 type="url"
@@ -45,7 +45,7 @@ function Form({student,handleStudent}) {
             </div>
             <div>
                 <h1>
-                    Image :
+                    Image 
                 </h1>
                 <input
                 type="url"
@@ -57,30 +57,30 @@ function Form({student,handleStudent}) {
             </div>
         </div>
         <div className={styles.details_cont_2}>
-            <h1>
+            <h1 className={styles.gender_label}>
                 Gender :
             </h1>
-                <div>
-                    <input
-                    type="radio"
-                    value="Male"
-                    onChange={(e)=>{
-                        student.sex=e.target.value;
-                    }
-                    }
-                    />
-                    <label>Male</label>
-                    <input
-                    type="radio"
-                    value="Female"
-                    onChange={e=>{
-                        student.sex = e.target.value;
-                    }}
-                    />
-                    <label>Female</label>
-                </div>
-            <label>
-                Skills :
+            <div className={styles.sex_input_container}>
+                <input
+                type="radio"
+                value="Male"
+                onChange={(e)=>{
+                    student.sex=e.target.value;
+                }
+                }
+                />
+                <p>Male</p>
+                <input
+                type="radio"
+                value="Female"
+                onChange={e=>{
+                    student.sex = e.target.value;
+                }}
+                />
+                <p>Female</p>
+            </div>
+            <h1 className={styles.skills_label}>Skills :</h1>
+            <div className={styles.skills_input_container}>
                 <input 
                 onChange={(e)=>{
                     setskills([...skills,e.target.value]);
@@ -88,7 +88,7 @@ function Form({student,handleStudent}) {
                 type="checkbox" 
                 value="HTML"
                 />
-                HTML
+                <p>HTML</p>
                 <input 
                 onChange={(e)=>{
                     setskills([...skills,e.target.value]);
@@ -96,7 +96,7 @@ function Form({student,handleStudent}) {
                 type="checkbox"
                  value="CSS"
                  />
-                 CSS
+                 <p>CSS</p>
                 <input 
                 onChange={(e)=>{
                     setskills([...skills,e.target.value]);
@@ -104,15 +104,26 @@ function Form({student,handleStudent}) {
                 type="checkbox" 
                 value="JS"
                 />
-                JS
-            </label>
-        </div>
-        <button onClick={()=>{
+                <p>JS</p>
+            </div>
+        <button 
+        className={styles.enroll_btn}
+        onClick={()=>{
+            console.log(student.length);
             student.id=uuidv4();
             student.skills=skills;
             handleStudent(student);
             setskills([]);
         }}>Enroll</button>
+        <button
+        className={styles.clear_btn}
+        onClick={()=>{
+            document.querySelector("input").value=" ";
+        }}
+        >
+            Clear
+        </button>
+        </div>
     </div>
   )
 }

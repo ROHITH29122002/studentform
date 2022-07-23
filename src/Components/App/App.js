@@ -23,9 +23,11 @@ function App() {
       <div className={styles.nav_2}>
         <h1>Student Enrollment Form</h1>
       </div>
-      <div>
-        <Form student={student} handleStudent={handleStudent} handleAddStudent={handleAddStudent}/>
-        <Students students={students}/>
+      <div className={styles.main_container}>
+        <Form student={student} handleStudent={handleStudent}/>
+        <div className={styles.student_container}>
+          <Students students={students}/>
+        </div>
       </div>
     </div>
   )

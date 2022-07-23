@@ -5,13 +5,13 @@ function Student({student}) {
   return (
     <div>
       <div>
-        <h1>{student.name}</h1>
-        <h1>{student.email}</h1>
-        <h1>{student.sex}</h1>
-        <h1>{student.website}</h1>
+        <h2>{student.name}</h2>
+        <h2>{student.email}</h2>
+        <h2>{student.sex}</h2>
+        <h2>{student.website}</h2>
         {
           skills.map(element => {
-            return <h1 key={element}>{element}</h1>
+            return <h2 key={element}>{element}</h2>
           })
         }
       </div>
