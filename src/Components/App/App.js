@@ -8,9 +8,11 @@ function App() {
   const [student,setstudent]=useState({});
   console.log(students);
   function handleStudent(info){
-    setstudent(info);
-    handleAddStudent(student);
-    setstudent({});
+    if(info.name!==" "){
+      setstudent(info);
+      handleAddStudent(student);
+      setstudent({});
+    }
   }
   function handleAddStudent(){
     setstudents([...students,student]);
@@ -25,9 +27,7 @@ function App() {
       </div>
       <div className={styles.main_container}>
         <Form student={student} handleStudent={handleStudent}/>
-        <div className={styles.student_container}>
-          <Students students={students}/>
-        </div>
+        <Students students={students}/>
       </div>
     </div>
   )

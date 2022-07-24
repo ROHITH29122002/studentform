@@ -6,6 +6,7 @@ function Form({student,handleStudent}) {
     const [skills,setskills]=useState([]);
   return (
     <div className={styles.form_container}>
+        <h1 className={styles.form_label}>Enrollment Form :</h1>
         <div className={styles.details_cont_1}>
             <div>
                 <h1>
@@ -14,7 +15,7 @@ function Form({student,handleStudent}) {
                 <input
                 type="text"
                 onChange={e => {
-                    student.name=e.target.value;
+                    student.name = e.target.value;
                 }
                 }
                 />
@@ -109,16 +110,26 @@ function Form({student,handleStudent}) {
         <button 
         className={styles.enroll_btn}
         onClick={()=>{
-            console.log(student.length);
             student.id=uuidv4();
             student.skills=skills;
+            if(student.name.length<1){
+                student.name=" ";
+            }
             handleStudent(student);
             setskills([]);
+            const input = document.querySelectorAll("input");
+            input.forEach(i =>{
+                i.value="";
+            })
         }}>Enroll</button>
         <button
         className={styles.clear_btn}
         onClick={()=>{
-            document.querySelector("input").value=" ";
+            const input = document.querySelectorAll("input");
+            input.forEach(i =>{
+                i.value="";
+            })
+            student.name=" ";
         }}
         >
             Clear

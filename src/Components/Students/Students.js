@@ -1,9 +1,10 @@
 import React from 'react'
 import Student from '../Student/Student'
+import styles from './Students.module.css'
 
 function Students({students}) {
   return (
-    <div>
+    <div className={styles.students_container}>
       {
         students.map(student => {
           return <Student student={student} key={student.id}/>
