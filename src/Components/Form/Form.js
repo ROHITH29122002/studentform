@@ -15,7 +15,7 @@ function Form({student,handleStudent}) {
                 <input
                 type="text"
                 onChange={e => {
-                    student.name = e.target.value;
+                    student.name = e.target.value.toUpperCase();
                 }
                 }
                 />
@@ -121,6 +121,9 @@ function Form({student,handleStudent}) {
             input.forEach(i =>{
                 i.value="";
             })
+            for (let index = 4; index < 9; index++) {
+                input[index].checked=false;
+            }
         }}>Enroll</button>
         <button
         className={styles.clear_btn}
@@ -129,6 +132,9 @@ function Form({student,handleStudent}) {
             input.forEach(i =>{
                 i.value="";
             })
+            for (let index = 4; index < 9; index++) {
+                input[index].checked=false;
+            }
             student.name=" ";
         }}
         >

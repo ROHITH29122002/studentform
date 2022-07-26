@@ -6,7 +6,6 @@ import Students from '../Students/Students'
 function App() {
   const [students,setstudents]=useState([]);
   const [student,setstudent]=useState({});
-  console.log(students);
   function handleStudent(info){
     if(info.name!==" "){
       setstudent(info);

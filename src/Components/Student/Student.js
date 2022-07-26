@@ -5,19 +5,21 @@ function Student({student}) {
   const skills = student.skills;
   return (
     <div className={styles.student_container}>
-      <div>
+      <div className={styles.img_container}>
         <img src={student.img} alt="img"/>
       </div>
-      <div>
-        <h2>{student.name}</h2>
-        <h2>{student.email}</h2>
-        <h2>{student.sex}</h2>
-        <h2>{student.website}</h2>
-        {
-          skills.map(element => {
-            return <h2 key={element}>{element}</h2>
-          })
-        }
+      <div className={styles.details_container}>
+        <h3>{student.name}</h3>
+        <h3>{student.email}</h3>
+        <h3>{student.sex}</h3>
+        <h3>{student.website}</h3>
+        <div className={styles.skills_container}>
+          {
+            skills.map(element => {
+              return <h3 key={element}>{element}</h3>
+            })
+          }
+        </div>
       </div>
     </div>
   )
