@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const cors = require("cors")
 const path=require("path")
-require(path.join(__dirname,"./db/connect.js"));
+require(path.join(__dirname,"/db/connect.js"));
 require("dotenv").config()
-const Student = require(path.join(__dirname,"./models/register.js"))
+const Student = require(path.join(__dirname,"/models/register.js"))
 
 
 const port = process.env.port || 5000;
@@ -44,9 +44,9 @@ app.post("/student",async (req,res)=>{
     }
 }) 
 
-app.use(express.static(path.join(__dirname,"./public/build")))
+app.use(express.static(path.join(__dirname,"/public/build")))
 app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"./public/build/index.html"),(err)=>{
+    res.sendFile(path.join(__dirname,"/public/build/index.html"),(err)=>{
         res.status(500).send(err)
     })
 })
