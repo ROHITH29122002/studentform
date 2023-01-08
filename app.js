@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors")
 const path=require("path")
 require("./db/connect");
+require("dotenv").config()
 const Student = require("./models/register")
 
 
