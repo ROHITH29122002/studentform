@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const cors = require("cors")
 const path=require("path")
-require("./db/connect");
+require(path.join(__dirname,"./db/connect.js"));
 require("dotenv").config()
-const Student = require("./models/register")
+const Student = require(path.join(__dirname,"./models/register.js"))
 
 
 const port = process.env.port || 5000;
