@@ -1,0 +1,16 @@
+.students_container{
+    padding-top:5.5rem;
+    padding-left: 1rem;
+    width: 50vw;
+}
+
+.students_container h1{
+    color: #fff;
+    display: inline;
+    margin-left: -1.1rem;
+    margin-bottom: 2rem;
+    background-color: rgb(110, 12, 230);
+    padding: 1rem 2rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

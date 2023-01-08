@@ -2,8 +2,7 @@
     margin: 2rem;
     padding: 1rem;
     display: flex;
-    background-color: #fff;
-    border: 2px solid orange;
+    background-color: rgb(110, 12, 230);
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
@@ -29,13 +28,19 @@ background-size: cover;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.details_container h3{
+    padding-bottom: .75rem;
+}
+
 .skills_container{
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.skills_container h3{
+.skills_container span{
+    font-size: 1.17rem;
+    font-weight: bold;
     padding: 0 1rem 0 0;
 }
 
@@ -45,5 +50,17 @@ background-size: cover;
     }
     .details_container{
         width: 100%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .details_container{
+        width: 100%;
+    }
+    .img_container img{
+        width: 120px;
+        height: 130px;
+        border: 2px solid orange;
+        border-radius: 10px;
     }
 }
