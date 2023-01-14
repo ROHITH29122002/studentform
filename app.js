@@ -13,6 +13,10 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended : false}))
 
+app.get("/",(req,res)=>{
+    res.send("WELCOME TO THE HOME PAGE OF RC INSTITUTE SERVER")
+})
+
 app.get("/students",(req,res)=>{
     Student.find((err,data)=>{
         if(err){

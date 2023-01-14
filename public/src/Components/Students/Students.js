@@ -7,7 +7,7 @@ function Students() {
   const [students,setstudents]=useState([]);
   useEffect(() => {
     const getdata = async () => {
-      const response = await fetch("http://localhost:5000/students")
+      const response = await fetch("https://rc-student-registration.onrender.com/students")
       const data = await response.json();
       setstudents(data);
     }

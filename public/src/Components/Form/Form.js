@@ -27,7 +27,7 @@ function Form() {
         e.preventDefault();
         const {name,email,reg,img,sex} = student;
         const {html,css,Js} = skills;
-        const response = await fetch("http://localhost:5000/student",{
+        const response = await fetch("https://rc-student-registration.onrender.com/student",{
             method:'post',
             headers : {
                 "Content-Type" : "application/json",
